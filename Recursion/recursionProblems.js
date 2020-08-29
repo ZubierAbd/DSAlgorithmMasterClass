@@ -70,4 +70,28 @@ function isPalindrome(string) {
     else return false
 }
 
-console.log(isPalindrome('dad'))
+
+function isPalindromeAgain(str) {
+    let left = 0;
+    let right = str.length - 1;
+    while (left < right) {
+        if (str[left] != str[right]) return false
+        left++;
+        right--;
+    }
+    return true;
+}
+
+console.log(isPalindromeAgain('dad'))
+
+function capitalizeFirst(array) {
+    let output = []
+
+    for (let word of array) {
+        output.push(word.charAt(0).toUpperCase() + word.slice(1))
+    }
+    return output
+
+}
+
+console.log(capitalizeFirst(['cat', 'bad']))
