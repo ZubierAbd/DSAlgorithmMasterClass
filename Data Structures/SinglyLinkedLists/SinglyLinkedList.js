@@ -217,7 +217,19 @@ class SinglyLinkedList {
         //Swap head and tail
         //create a variable called next 
         //create called pervious and node 
-        let prev, next, currentNode
+        let node = this.head;
+        this.head = this.tail
+        this.tail = node;
+
+        let prev = null;
+        let next = null;
+        for (let i = 0; i < this.length; i++) {
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        return this;
     }
 
     print() {
