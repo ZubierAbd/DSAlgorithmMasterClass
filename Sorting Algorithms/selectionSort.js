@@ -25,3 +25,5 @@ function selectionSort(arr) {
 }
 
 console.log(selectionSort([4, 32, 5, 3, 2, 25, 1]))
+
+export default selectionSort();

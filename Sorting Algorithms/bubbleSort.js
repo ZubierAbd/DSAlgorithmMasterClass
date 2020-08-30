@@ -47,3 +47,5 @@ function bubbleSort2(arr) {
 console.log(bubbleSort([4, 2, 5, 1, 2, 2, 4, 5, 42, 22]))
 
 console.log(bubbleSort2([4, 2, 5, 1, 2, 2, 4, 5, 42, 22]))
+
+export default bubbleSort()
