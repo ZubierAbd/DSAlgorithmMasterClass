@@ -121,13 +121,46 @@ class BinarySearchTree {
     }
 
 
-    DFS() {
+    DFSPreorder() {
         //Visit every node once 
-        //Visits each node on the same level once 
+        //Create variable that stores value of nodes visited 
+        //Store the root of the BST in a variable called current
+        //write a helper function which accepts a node 
+        //Pushes the value of the node to data 
+        //if node has left, call helper function on left
+        //if node has right, call helper function on right
         let data = []
-        let Q = []
-        let node = this.root
-        Q.push(node)
+        let current = this.root;
+
+        function DFShelper(node) {
+            if (!node) return
+            data.push(node.value)
+            if (node.left) {
+                DFShelper(node.left)
+            } else if (node.right) {
+                DFShelper(node.right)
+            }
+        }
+
+        DFShelper(current)
+        return data
+    }
+
+    DFSPostOrder() {
+        let data = []
+        let current = this.root
+
+        function traverse(node) {
+            if (node.left) {
+                traverse(node.left)
+            } else if (node.right) {
+                traverse(node.right)
+            }
+            data.push(node.value)
+        }
+
+        traverse(current)
+        return data
     }
 
 }
@@ -147,3 +180,5 @@ tree.insert(7)
 tree.insert(10)
 
 console.log(tree.BFS())
+console.log(tree.DFSPreorder())
+console.log(tree.DFSPostOrder())
